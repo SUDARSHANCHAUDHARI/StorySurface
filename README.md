@@ -1,25 +1,53 @@
 # StorySurface
 
-StorySurface is the interactive-story starter in the Living Interfaces suite.
+StorySurface is a standalone prototype for interactive narrative interfaces with mood-driven presentation.
 
-## MVP
+## What It Is
 
-- Enter a story idea
-- Move through lightweight generated scenes
-- Preview emotion-driven presentation styles
-- Keep the first version fast and demoable
+StorySurface explores story experiences where interface and narrative move together:
 
-## Run
+- prompt-led story generation mock
+- scene staging with emotional tone
+- light branching choices
+- cinematic reading flow
+
+## Current Features
+
+- generate a structured mock story from a prompt
+- move through scenes with lightweight branching
+- inspect beats, tone, and scene progression
+- explore a more deliberate storytelling stage
+
+## Stack
+
+- Next.js
+- React
+- TypeScript
+- pnpm
+
+## Run Locally
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open `http://localhost:3000`.
 
+## Deployment
+
+Recommended first deployment target:
+
+- Vercel
+
+Suggested environment:
+
+- standalone project
+- one deployment per repo
+- production branch: `main`
+
 ## Next Steps
 
-- Replace mock scene generation with model output
-- Add branching choices
-- Add audio, visuals, and export later
+- replace mock branching with richer narrative generation
+- add audio, pacing, and visual media layers
+- add export and creator tooling later
