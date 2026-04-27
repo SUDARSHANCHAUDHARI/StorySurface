@@ -1,0 +1,157 @@
+:root {
+  color-scheme: dark;
+  --bg: #120916;
+  --card: rgba(38, 16, 46, 0.72);
+  --line: rgba(255, 184, 108, 0.12);
+  --text: #fff7ed;
+  --muted: #e2cbbd;
+  --accent: #f97316;
+  --accent-soft: #fdba74;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.14), transparent 28%),
+    linear-gradient(180deg, #09040d 0%, var(--bg) 100%);
+  color: var(--text);
+  font-family: "Iowan Old Style", Georgia, serif;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.shell {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.eyebrow,
+.label {
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  margin: 8px 0 0;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.lede {
+  margin: 16px 0 24px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.form,
+.viewer,
+.scene {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form button,
+.viewer button {
+  border: none;
+  border-radius: 18px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #fb923c, #ec4899);
+  color: white;
+  cursor: pointer;
+}
+
+.viewer {
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.scene {
+  padding: 28px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.scene.wonder {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.18), rgba(38, 16, 46, 0.82));
+}
+
+.scene.tension {
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.16), rgba(38, 16, 46, 0.82));
+}
+
+.scene.resolve {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.16), rgba(38, 16, 46, 0.82));
+}
+
+.scene:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.scene p,
+.scene h2,
+.progress {
+  margin: 0;
+}
+
+.scene h2 {
+  margin-top: 8px;
+  font-size: 2rem;
+}
+
+.scene p {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 62ch;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.progress {
+  color: var(--muted);
+}
