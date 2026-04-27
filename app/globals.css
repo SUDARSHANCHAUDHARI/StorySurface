@@ -2,6 +2,7 @@
   color-scheme: dark;
   --bg: #120916;
   --card: rgba(38, 16, 46, 0.72);
+  --card-strong: rgba(51, 20, 58, 0.82);
   --line: rgba(255, 184, 108, 0.12);
   --text: #fff7ed;
   --muted: #e2cbbd;
@@ -31,9 +32,16 @@ textarea {
 }
 
 .shell {
-  width: min(980px, calc(100% - 32px));
+  width: min(1040px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0 80px;
+  padding: 40px 0 80px;
+}
+
+.heroBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: center;
 }
 
 .eyebrow,
@@ -46,15 +54,20 @@ textarea {
 
 .hero h1 {
   margin: 8px 0 0;
-  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
 }
 
-.lede {
-  margin: 16px 0 24px;
+.lede,
+.heroCard p,
+.viewerTop p,
+.scene p,
+.progress {
   color: var(--muted);
   line-height: 1.7;
 }
 
+.heroCard,
 .form,
 .viewer,
 .scene {
@@ -65,10 +78,29 @@ textarea {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
 }
 
+.heroCard {
+  padding: 24px;
+  background: var(--card-strong);
+}
+
+.heroCard h2,
+.viewerTop h2,
+.scene h3 {
+  margin: 8px 0 12px;
+}
+
 .form {
   display: grid;
   gap: 14px;
   padding: 20px;
+  margin-top: 24px;
+}
+
+.formTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .form textarea {
@@ -81,13 +113,8 @@ textarea {
   color: var(--text);
 }
 
-.formActions {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .form button,
-.viewer button {
+.choiceRow button {
   border: none;
   border-radius: 18px;
   padding: 14px 18px;
@@ -101,9 +128,17 @@ textarea {
   padding: 24px;
 }
 
+.viewerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .scene {
+  margin-top: 18px;
   padding: 28px;
-  min-height: 280px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -126,32 +161,61 @@ textarea {
   transform: translateY(-4px) scale(1.01);
 }
 
-.scene p,
-.scene h2,
-.progress {
-  margin: 0;
-}
-
-.scene h2 {
-  margin-top: 8px;
-  font-size: 2rem;
-}
-
-.scene p {
-  margin-top: 14px;
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 62ch;
-}
-
-.footer {
+.sceneMeta {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
+}
+
+.toneBadge {
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  text-transform: capitalize;
+}
+
+.scene h3 {
+  font-size: 2.4rem;
+}
+
+.choiceRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 18px;
 }
 
-.progress {
-  color: var(--muted);
+.storyRail {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.railDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.railDot.active {
+  background: linear-gradient(135deg, #fb923c, #ec4899);
+  box-shadow: 0 0 0 8px rgba(236, 72, 153, 0.12);
+}
+
+@media (max-width: 900px) {
+  .heroBlock,
+  .viewerTop {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .formTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
