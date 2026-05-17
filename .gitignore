@@ -8,3 +8,6 @@ build
 .env.*
 !.env.example
 .vercel
+
+# graphify knowledge graph
+graphify-out/
