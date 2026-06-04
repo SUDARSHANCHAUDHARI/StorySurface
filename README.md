@@ -1,29 +1,33 @@
 # StorySurface
 
-StorySurface is a standalone prototype for interactive narrative interfaces with mood-driven presentation.
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](package.json)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB.svg)](https://react.dev/)
+[![Release](https://img.shields.io/badge/release-public%20demo-orange.svg)](RELEASE_MEMORY.md)
 
-## What It Is
+Interactive narrative UI prototype for mood-driven story presentation, scene staging, and lightweight branching.
 
-StorySurface explores story experiences where interface and narrative move together:
+> **Status:** Public demo-ready · static build verified · story generation is mock/prototype behavior
 
-- prompt-led story generation mock
-- scene staging with emotional tone
-- light branching choices
-- cinematic reading flow
+## Why This Exists
 
-## Current Features
+Story experiences can feel richer when the interface changes with tone, pacing, and scene state. StorySurface explores that reading surface before adding model-backed generation and persistence.
 
-- generate a structured mock story from a prompt
-- move through scenes with lightweight branching
-- inspect beats, tone, and scene progression
-- explore a more deliberate storytelling stage
+## Key Technical Decisions
 
-## Stack
+**Mock generation keeps the first demo focused on experience.** The UI can demonstrate flow, tone, and branching before adding real AI generation.
 
-- Next.js
-- React
-- TypeScript
-- pnpm
+**Static Next.js output is enough for launch.** The prototype does not need server state yet, so Cloudflare Pages can host it as a public demo.
+
+**The README labels generation honestly.** Users should know the current branching/generation is a demo concept, not a production story engine.
+
+## Features
+
+- prompt-led mock story flow
+- scene progression
+- lightweight branching choices
+- tone and beat presentation
+- responsive reading stage
 
 ## Run Locally
 
@@ -36,18 +40,27 @@ Open `http://localhost:3000`.
 
 ## Deployment
 
-Recommended first deployment target:
+| Setting | Value |
+|---|---|
+| Release scope | Public demo |
+| Framework preset | `Next.js` |
+| Build command | `pnpm build` |
+| Build output directory | `out` |
+| Node version | `20.19.6` |
 
-- Vercel
+## Verification
 
-Suggested environment:
+```bash
+pnpm build
+pnpm exec tsc --noEmit
+```
 
-- standalone project
-- one deployment per repo
-- production branch: `main`
+## Known Limits
 
-## Next Steps
+- Story generation is mock behavior.
+- No persistence or saved stories yet.
+- No audio, media, or creator export workflow yet.
 
-- replace mock branching with richer narrative generation
-- add audio, pacing, and visual media layers
-- add export and creator tooling later
+## Author
+
+Built by **Sudarshan Chaudhari** — SudarshanTechLabs.
