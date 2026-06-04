@@ -13,3 +13,5 @@ tsconfig.tsbuildinfo
 
 # graphify knowledge graph
 graphify-out/
+
+CLAUDE_TASKS.md
