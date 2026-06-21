@@ -74,3 +74,34 @@ Not yet deployed. Self-hosted on your own domain when ready.
 - [ ] Persistence / story history
 - [ ] Image / scene art generation
 - [ ] Product spec answering: writer's tool? Reader's tool? Interactive-fiction engine? Demo?
+
+## Categorized work remaining
+
+| Item | Effort | Bucket | Blocker | Priority |
+|------|--------|--------|---------|----------|
+| Fix regenerate no-op (thread seed) | ~1h | 🟦 Pure code | none — bounded fix to `createMockStory(prompt, seed)` + `app/page.tsx` | P2 |
+| Deploy as a prototype demo | ~30m | 🔑 Needs hosting | hosting access; no env vars | P2 |
+| Real AI story generation | 1–2d | 🎯 Needs spec then 🔑 + 🟦 | which LLM? OpenAI / Anthropic? + API key | P1 |
+| UI choice-graph traversal | half day | 🟦 Pure code | none — wire `nextSceneId` into `app/page.tsx` state | P2 |
+| Persistence / story history | half day | 🟦 Pure code (+🔑 if hosted DB) | local first (`localStorage`), then DB if multi-device | P3 |
+| Image/scene art generation | 1d | 🎯 Needs spec then 🔑 + 🟦 | which image model? DALL·E / SD / Flux? + API key | P3 |
+
+## Product spec questions (answer one sentence each)
+
+1. **Who's the user?** Writer drafting stories, reader playing them, or both?
+2. **Is the story authored, generated, or both?** Hardcoded scenes? AI-generated on demand? Or branchable templates?
+3. **Are choices persistent?** Does the story state save between sessions?
+4. **Visuals?** Text-only, AI-generated images, hand-illustrated, or none?
+5. **Single-player or shared?** One reader's choices vs collaborative storytelling.
+
+## Release plan
+
+**Current state = prototype demo with mock generator.** Release plan once spec'd:
+
+1. Tag current state as `v0.1.0 — UI prototype, mock story`.
+2. Fix the regenerate no-op + add choice-graph traversal → `v0.2.0`.
+3. Replace mock generator with real AI calls → `v0.3.0`.
+4. Add persistence + image generation → `v1.0.0`.
+
+### Deploy prerequisites (for the prototype demo)
+**None.** Zero env vars (until AI generation is added).
