@@ -43,4 +43,4 @@ This is a **prototype, not a product.** Real product would need:
 
 ## Deployment
 
-Not yet deployed. Zero-config Vercel possible.
+Not yet deployed. Self-hosted on your own domain when ready.
