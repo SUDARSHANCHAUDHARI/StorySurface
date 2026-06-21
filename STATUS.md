@@ -44,3 +44,33 @@ This is a **prototype, not a product.** Real product would need:
 ## Deployment
 
 Not yet deployed. Self-hosted on your own domain when ready.
+
+## File-by-file checklist
+
+### App shell
+- [x] `app/layout.tsx` — root layout
+- [x] `app/page.tsx` — story UI (premise + scene viewer)
+- [x] `app/globals.css` — base styles
+
+### Components
+- [x] `components/PromptForm.tsx` — prompt input + regenerate button (button currently no-op)
+- [x] `components/SceneViewer.tsx` — scene presentation
+
+### Lib
+- [x] `lib/story-generator.ts` — `createMockStory()` returns 5-scene bundle with choice graph
+
+### Tests
+- [x] `lib/story-generator.test.ts` — 8 tests (prompt embedding, default fallback, scene IDs, **choice-graph integrity guard**, tone enum)
+
+### Quality + scaffolding
+- [x] ESLint configured (0 errors, 1 honest warning about no-op regenerate)
+- [x] `typecheck` + `test` scripts
+- [x] Build + lint + typecheck green
+
+### Not done (product gaps — need spec)
+- [ ] Make regenerate button actually regenerate (thread `seed` state through `createMockStory`)
+- [ ] Real AI story generation (currently hardcoded 5-scene template)
+- [ ] UI traversal of the choice graph (choices exist in data, UI doesn't follow them)
+- [ ] Persistence / story history
+- [ ] Image / scene art generation
+- [ ] Product spec answering: writer's tool? Reader's tool? Interactive-fiction engine? Demo?
