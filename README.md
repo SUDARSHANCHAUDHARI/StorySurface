@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](package.json)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB.svg)](https://react.dev/)
-[![Release](https://img.shields.io/badge/release-public%20demo-orange.svg)](RELEASE_MEMORY.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Interactive narrative UI prototype for mood-driven story presentation, scene staging, and lightweight branching.
 
